@@ -56,6 +56,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>ratand/currex-${project.artifactId}:${project.version}</name>
+					</image>
+					<!--pull images only if not present locally -->
+					<pulllPolicy>IF_NOT_PRESENT</pulllPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
